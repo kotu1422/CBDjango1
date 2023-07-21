@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333333;
+    color: #ff9933;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #ff6600;
+    text-align: center;
+}
+
+p {
+    color: #ff9933;
+    margin-bottom: 20px;
+}
+
+div {
+    color: #ff9933;
+}
+
+ul {
+    color: #ff9933;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #cccccc;
+}

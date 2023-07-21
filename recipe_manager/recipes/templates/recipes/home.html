@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <h1>Welcome to Recipe Manager</h1>
-    <div>List of recipes:</div>
+    <p>List of recipes:</p>
     <ul>
-        <li>recipe</li>
+        {% for recipe in recipes %}
+            <li><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></li>
+        {% endfor %}
     </ul>
 </body>
 </html>

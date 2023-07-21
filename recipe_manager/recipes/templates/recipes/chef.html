@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Chef</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Chef name</h1>
-    <p>Chef bio</p>
+    <h1>{{ chef.name }}</h1>
+    <p>{{ chef.bio }}</p>
+    <div>Recipes:</div>
     <ul>
-        <li>recipe</li>
+        {% for recipe in chef.recipe_set.all %}
+            <li><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></li>
+        {% endfor %}
     </ul>
+
+    <p><a href="{% url 'home' %}">HOME</a></p>
 </body>
 </html>

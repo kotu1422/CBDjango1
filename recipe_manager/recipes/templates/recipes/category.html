@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Categories</title>
+    <title>Category</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>List of categories</h1>
+    <h1>{{ category.name }}</h1>
     <ul>
-        <li>category</li>
+        {% for recipe in category.recipe_set.all %}
+            <li><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></li>
+        {% endfor %}
     </ul>
+
+    <p><a href="{% url 'home' %}">HOME</a></p>
 </body>
 </html>
